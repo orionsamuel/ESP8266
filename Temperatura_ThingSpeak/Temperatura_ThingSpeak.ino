@@ -4,7 +4,7 @@
 //defines
 #define SSID_REDE     "Nilton"  //coloque aqui o nome da rede que se deseja conectar
 #define SENHA_REDE    "selfcare0101"  //coloque aqui a senha da rede que se deseja conectar
-#define INTERVALO_ENVIO_THINGSPEAK  120000  //intervalo entre envios de dados ao ThingSpeak (em ms)
+#define INTERVALO_ENVIO_THINGSPEAK  5000  //intervalo entre envios de dados ao ThingSpeak (em ms)
  
 //constantes e variáveis globais
 char EnderecoAPIThingSpeak[] = "api.thingspeak.com";
@@ -82,8 +82,7 @@ void setup(){
 void loop(){
   int UmidadePercentualTruncada;
   int TemperaturaPercentualTruncada;
-  char FieldUmidade[11];
-  char FieldTemperatura[11];
+  char Fields[100] = {0};
 
   //Força desconexão ao ThingSpeak (se ainda estiver desconectado)
   if (client.connected())
@@ -110,10 +109,8 @@ void loop(){
   if(!client.connected() && 
     (millis() - lastConnectionTime > INTERVALO_ENVIO_THINGSPEAK))
   {
-      //sprintf(FieldUmidade,"field2=%d",UmidadePercentualTruncada);
-      //EnviaInformacoesThingspeak(FieldUmidade);
-      sprintf(FieldTemperatura,"field1=%d",TemperaturaPercentualTruncada);
-      EnviaInformacoesThingspeak(FieldTemperatura);
+      sprintf(Fields,"field1=%d&field2=%d", TemperaturaPercentualTruncada, UmidadePercentualTruncada);
+      EnviaInformacoesThingspeak(Fields);
   }
 
   delay(1000);

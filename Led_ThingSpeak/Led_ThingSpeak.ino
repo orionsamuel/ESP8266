@@ -1,8 +1,8 @@
 #include <ESP8266WiFi.h>  //essa biblioteca já vem com a IDE. Portanto, não é preciso baixar nenhuma biblioteca adicional
  
 //defines
-#define SSID_REDE     "Orion"  //coloque aqui o nome da rede que se deseja conectar
-#define SENHA_REDE    "Anatomicas07"  //coloque aqui a senha da rede que se deseja conectar
+#define SSID_REDE     "Nilton"  //coloque aqui o nome da rede que se deseja conectar
+#define SENHA_REDE    "selfcare0101"  //coloque aqui a senha da rede que se deseja conectar
 #define INTERVALO_ENVIO_THINGSPEAK  15000  //intervalo entre envios de dados ao ThingSpeak (em ms)
 
 
@@ -63,7 +63,7 @@ void FazConexaoWiFi(void)
 int FazLeituraLed(void)
 {
   int valorLed;
-  if(digitalRead(4) == HIGH){
+  if(digitalRead(5) == HIGH){
     valorLed = 1;
   }else{
     valorLed = 0;
@@ -73,16 +73,16 @@ int FazLeituraLed(void)
 }
 
 void AcendeLed(void){
-  digitalWrite(4, LOW);
+  digitalWrite(5, LOW);
   delay(2000); 
-  digitalWrite(4, HIGH); 
+  digitalWrite(5, HIGH); 
   delay(2000); 
 }
 
 void setup() {
 
   Serial.begin(115200);
-  pinMode(4, OUTPUT); // Initialize the LED pin as an output
+  pinMode(5, OUTPUT); // Initialize the LED pin as an output
   lastConnectionTime = 0; 
   FazConexaoWiFi();
 }
