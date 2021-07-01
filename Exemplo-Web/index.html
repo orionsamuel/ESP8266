@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+    <head>
+        <title>Page Test</title>
+        <meta charset="utf-8">
+
+        <link rel="stylesheet" href="main.css">
+
+        <!--
+        scripts relacionados ao chartjs
+        -->
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/moment.js/2.13.0/moment.min.js"></script>
+        <script src="https://www.chartjs.org/dist/2.8.0/Chart.min.js"></script>
+        <!-- 
+        scripts para o uso do AJAX e JQuery necessarios para requisicao de dados
+        do thing speak
+        -->
+        <script src='https://ajax.googleapis.com/ajax/libs/jquery/1.9.1/jquery.min.js'></script>
+        <script src='https://www.google.com/jsapi'></script> 
+
+        <!-- 
+        scripts usados na aplicacao
+        chartline.js eh responsavel pelo grafico 1
+        chartjsline_thingspeak.js eh responsavel pelo grafico 2
+        onload.js eh responsavel por chamar as funcoes de inicializado dos dois graficos
+        -->
+        <script src="js/chartjsline.js"></script>
+        <script src="js/chartjsline_thingspeak.js"></script>
+        <script src="js/onload.js"></script>
+
+    </head>
+    <body>
+       <center>
+            <h1>Página Exemplo HTML</h1>
+            <p>Este é um paragráfo antes da imagem.</p>
+            <img src="nodemcu.jpg" alt="Placa Nodemcu">
+            <p>Texto após a imagem e antecessor a segunda imagem.</p>
+            <img src="iot.png" alt="Mundo IoT">
+        </center>
+
+        <div style="width:100%; overflow: hidden;">
+            <div class="box">
+              <p>Video integrado através da TAG Iframe</p>
+              <iframe width="440" height="300" align="left" src="https://www.youtube.com/embed/1Mcdh2Vf2Xk" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen>
+              </iframe>
+            </div>
+        
+            <div class="box">
+              <p>Integrado do ThinkSpeak atavés de Iframe</p>
+              <iframe width="440" height="300" align="right" style="border: 1px solid #cccccc;" src="https://thingspeak.com/channels/998946/charts/1?bgcolor=%23ffffff&color=%23d62020&dynamic=true&results=60&type=line&update=15">
+              </iframe>
+            </div>
+        </div>
+
+        <div style="width:75%;">
+            <p>Este gráfico é desenhado usando o ChartJs</p>
+            <canvas id="canvas"></canvas>
+        </div>
+          
+        <div style="width:75%;">
+            <p>Este gráfico é desenhado usando o ChartJs com thingspeak</p>
+            <canvas id="canvas2"></canvas>
+        </div>
+    </body>
+</html>
