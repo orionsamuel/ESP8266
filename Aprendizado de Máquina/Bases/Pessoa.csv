@@ -1,0 +1,11 @@
+Idade,Genero,Estado_Civil,Qt_Filhos,Escolaridade,Conta_Corrente,Renda_Bruta,Cartao_Credito,Imovel_Proprio
+45,Masc,Divorciado,2,Superior,Sim,5000,Sim,Sim
+37,Femi,Solteiro,0,Médio,Não,3500,Sim,Não
+79,Masc,Viuvo,4,Fundamental,Sim,10000,Sim,Não
+21,Femi,Casado,2,Superior,Não,1500,Não,Sim
+65,Femi,Casado,1,Superior,Sim,2900,Sim,Sim
+53,Masc,Casado,3,Médio,Não,3100,Sim,Não
+27,Femi,Solteiro,1,Superior,Sim,4200,Sim,Não
+33,Femi,Casado,3,Pós-graduação,Não,7500,Sim,Sim
+41,Masc,Divorciado,0,Superior,Sim,5600,Não,Não
+19,Masc,Solteiro,0,Médio,Não,800,Não,Não
