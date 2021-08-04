@@ -98,6 +98,6 @@ void loop() {
     snprintf (msg, 75, "hello world #%ld", value);
     Serial.print("Publish message: ");
     Serial.println(msg);
-    client.publish("event", msg);
+    client.publish("imd0902envia", msg);
   }
 }
