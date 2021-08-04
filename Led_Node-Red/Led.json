@@ -48,7 +48,8 @@
         "wires": [
             [
                 "bd91ee2d6d440b47",
-                "4bdd5c6b3d78be3a"
+                "4bdd5c6b3d78be3a",
+                "701928bc49665d21"
             ]
         ]
     },
@@ -76,7 +77,8 @@
         "wires": [
             [
                 "bd91ee2d6d440b47",
-                "4bdd5c6b3d78be3a"
+                "4bdd5c6b3d78be3a",
+                "701928bc49665d21"
             ]
         ]
     },
@@ -132,6 +134,22 @@
                 "76aa0bb00e5a5846"
             ]
         ]
+    },
+    {
+        "id": "701928bc49665d21",
+        "type": "ui_text",
+        "z": "d2ef83005656bc2d",
+        "group": "bf39a5787f1395a1",
+        "order": 2,
+        "width": 0,
+        "height": 0,
+        "name": "",
+        "label": "Saída Botão",
+        "format": "{{msg.payload}}",
+        "layout": "row-spread",
+        "x": 410,
+        "y": 460,
+        "wires": []
     },
     {
         "id": "a1d85cf7093a6ea3",
