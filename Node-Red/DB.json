@@ -1,0 +1,163 @@
+[
+    {
+        "id": "9b12216310f33b7c",
+        "type": "tab",
+        "label": "Banco de Dados",
+        "disabled": false,
+        "info": ""
+    },
+    {
+        "id": "441b5ef8f67f1e49",
+        "type": "inject",
+        "z": "9b12216310f33b7c",
+        "name": "True",
+        "props": [
+            {
+                "p": "payload"
+            },
+            {
+                "p": "topic",
+                "vt": "str"
+            }
+        ],
+        "repeat": "",
+        "crontab": "",
+        "once": false,
+        "onceDelay": 0.1,
+        "topic": "",
+        "payload": "true",
+        "payloadType": "bool",
+        "x": 100,
+        "y": 140,
+        "wires": [
+            [
+                "e4786d75ae4771f5"
+            ]
+        ]
+    },
+    {
+        "id": "4317c830d26d4946",
+        "type": "debug",
+        "z": "9b12216310f33b7c",
+        "name": "",
+        "active": true,
+        "tosidebar": true,
+        "console": false,
+        "tostatus": false,
+        "complete": "payload",
+        "targetType": "msg",
+        "statusVal": "",
+        "statusType": "auto",
+        "x": 530,
+        "y": 140,
+        "wires": []
+    },
+    {
+        "id": "e4786d75ae4771f5",
+        "type": "function",
+        "z": "9b12216310f33b7c",
+        "name": "",
+        "func": "var d = msg.payload;\nmsg.topic = \"INSERT INTO teste (`valor`) VALUES (\"+d+\");\"\nreturn msg;",
+        "outputs": 1,
+        "noerr": 0,
+        "initialize": "",
+        "finalize": "",
+        "libs": [],
+        "x": 320,
+        "y": 180,
+        "wires": [
+            [
+                "4317c830d26d4946",
+                "5013063665c9bd53"
+            ]
+        ]
+    },
+    {
+        "id": "5013063665c9bd53",
+        "type": "mysql",
+        "z": "9b12216310f33b7c",
+        "mydb": "a43652fbbc8999da",
+        "name": "",
+        "x": 530,
+        "y": 200,
+        "wires": [
+            [
+                "63b104e636d2263c"
+            ]
+        ]
+    },
+    {
+        "id": "7b528e08e7594ca2",
+        "type": "inject",
+        "z": "9b12216310f33b7c",
+        "name": "False",
+        "props": [
+            {
+                "p": "payload"
+            },
+            {
+                "p": "topic",
+                "vt": "str"
+            }
+        ],
+        "repeat": "",
+        "crontab": "",
+        "once": false,
+        "onceDelay": 0.1,
+        "topic": "",
+        "payload": "false",
+        "payloadType": "bool",
+        "x": 100,
+        "y": 200,
+        "wires": [
+            [
+                "e4786d75ae4771f5"
+            ]
+        ]
+    },
+    {
+        "id": "63b104e636d2263c",
+        "type": "function",
+        "z": "9b12216310f33b7c",
+        "name": "",
+        "func": "msg.topic = \"SELECT FROM teste;\"\nreturn msg;",
+        "outputs": 1,
+        "noerr": 0,
+        "initialize": "",
+        "finalize": "",
+        "libs": [],
+        "x": 540,
+        "y": 280,
+        "wires": [
+            [
+                "d976cfe448b1d28b"
+            ]
+        ]
+    },
+    {
+        "id": "d976cfe448b1d28b",
+        "type": "debug",
+        "z": "9b12216310f33b7c",
+        "name": "",
+        "active": true,
+        "tosidebar": true,
+        "console": false,
+        "tostatus": false,
+        "complete": "false",
+        "statusVal": "",
+        "statusType": "auto",
+        "x": 690,
+        "y": 280,
+        "wires": []
+    },
+    {
+        "id": "a43652fbbc8999da",
+        "type": "MySQLdatabase",
+        "name": "",
+        "host": "127.0.0.1",
+        "port": "3306",
+        "db": "nrdatabase",
+        "tz": "",
+        "charset": "UTF8"
+    }
+]

@@ -1,0 +1,73 @@
+[
+    {
+        "id": "d4177003.20abd",
+        "type": "tab",
+        "label": "Hello World",
+        "disabled": false,
+        "info": ""
+    },
+    {
+        "id": "73989f64.62ff4",
+        "type": "inject",
+        "z": "d4177003.20abd",
+        "name": "",
+        "props": [
+            {
+                "p": "payload"
+            },
+            {
+                "p": "topic",
+                "vt": "str"
+            }
+        ],
+        "repeat": "",
+        "crontab": "",
+        "once": false,
+        "onceDelay": 0.1,
+        "topic": "",
+        "payloadType": "date",
+        "x": 140,
+        "y": 100,
+        "wires": [
+            [
+                "b48d8e04.b686b"
+            ]
+        ]
+    },
+    {
+        "id": "803e99c9.ca0d78",
+        "type": "debug",
+        "z": "d4177003.20abd",
+        "name": "",
+        "active": true,
+        "tosidebar": true,
+        "console": false,
+        "tostatus": false,
+        "complete": "payload",
+        "targetType": "msg",
+        "statusVal": "",
+        "statusType": "auto",
+        "x": 510,
+        "y": 100,
+        "wires": []
+    },
+    {
+        "id": "b48d8e04.b686b",
+        "type": "function",
+        "z": "d4177003.20abd",
+        "name": "",
+        "func": "var d = new Date(msg.payload);\nmsg.payload = d.toString();\nreturn msg;",
+        "outputs": 1,
+        "noerr": 0,
+        "initialize": "",
+        "finalize": "",
+        "libs": [],
+        "x": 330,
+        "y": 100,
+        "wires": [
+            [
+                "803e99c9.ca0d78"
+            ]
+        ]
+    }
+]
